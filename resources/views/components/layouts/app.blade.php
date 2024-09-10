@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? '' }}</title>
     <meta name="description" content="{{ $metaDescription ?? 'default meta description' }}"/>
-    <link rel="stylesheet" href="/css/app.css">
-    <script src="/js/app.js"></script>
+    {{--  <link rel="stylesheet" href="/css/app.css">
+    script src="/js/app.js"></script>  --}}
+    @vite(['resources/js/app.js', 'resources/css/app.scss'])
 </head>
 <body>
 
