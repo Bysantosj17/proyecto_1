@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 //Laravel-9.test => welcome
-Route::view('', 'welcome' )->name('home');
+Route::view('/', 'welcome' )->name('home');
 
 //Laravel-9.test/contacto => contact
 Route::view('/contacto', 'contact' )->name('contact');
@@ -35,4 +35,8 @@ Route::resource('blog', PostController::class,[
 //Laravel-9.test/ =>about
 Route::view('/about', 'about' )->name('about');
 
+Route::get('/login', function(){
+    return 'Login page';
+})->name('login');
 
+Route::view('/register', 'auth.register')->name('register');
