@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,3 +41,4 @@ Route::get('/login', function(){
 })->name('login');
 
 Route::view('/register', 'auth.register')->name('register');
+Route::post('/register', [RegisteredUserController::class, 'store']);
