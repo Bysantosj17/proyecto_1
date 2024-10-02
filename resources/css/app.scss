@@ -5,8 +5,21 @@ body{
     background-color:#19191bb3 ;
 }
 
-.nav{
-    bottom: 500px;
-    float: left;
+.contenedor_1{
     position: relative;
+
+}
+
+.slide_1{
+    position: relative;
+    width: 90%;
+    margin: auto;
+}
+
+.nav_1{
+    left: 38% ;
+    float: left;
+    position: absolute;
+    top: 10%;
+    width: 80%;
 }
