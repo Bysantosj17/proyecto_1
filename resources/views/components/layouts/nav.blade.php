@@ -6,10 +6,11 @@
 <li><a href="{{ route('contact') }}">Contact</a></li>
 </ul>
 </nav> --}}
-<div class="contedor_1">
+<div class="contenedor_1">
     <div class="slide_1">
         <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
+
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
@@ -19,13 +20,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('img/carousel/tatoo_1.jpg') }}" class="d-block w-100" alt="car_1" height="900">
+                    <img src="{{ asset('img/carousel/tatoo_1.jpg') }}" class="d-block w-100" alt="car_1" height="600">
                 </div>
                 <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/carousel/tatoo_2.jpg') }}" class="d-block w-100" alt="car_2" height="600">
                 </div>
                 <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/carousel/tatoo_3.jpg') }}" class="d-block w-100" alt="car_3" height="600">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -39,6 +40,21 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+        <h5 class="titulo_1"><strong>ALMA NEGRA</strong></h5>
+        <div class="nav_1">
+            <nav class="nav_2">
+                <ul class="ul_1">
+                    <li class="li_1"><a class="a_1" href=""><strong>Inicio</strong></a></li>
+                    <li class="li_1"><a class="a_1" href=""><strong>Tatoos</strong></a></li>
+                    <li class="li_1"><a class="a_1" href=""><strong>Blog</strong></a></li>
+                    <li class="li_1"><a class="a_1" href=""><strong>Contacto</strong></a></li>
+                    <li class="li_1"><a class="a_1" href=""><strong>Login</strong></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
         <div class="nav_1">
             <nav class="navbar navbar-expand-lg bg-body-tertiary color-blue" data-bs-theme="dark">
                 <div class="container-fluid">
@@ -86,5 +102,5 @@
                 </div>
             </nav>
         </div>
-    </div>
-</div>
+
+
