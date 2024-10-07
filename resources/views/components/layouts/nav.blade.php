@@ -44,63 +44,28 @@
         <div class="nav_1">
             <nav class="nav_2">
                 <ul class="ul_1">
-                    <li class="li_1"><a class="a_1" href=""><strong>Inicio</strong></a></li>
-                    <li class="li_1"><a class="a_1" href=""><strong>Tatoos</strong></a></li>
-                    <li class="li_1"><a class="a_1" href=""><strong>Blog</strong></a></li>
-                    <li class="li_1"><a class="a_1" href=""><strong>Contacto</strong></a></li>
-                    <li class="li_1"><a class="a_1" href=""><strong>Login</strong></a></li>
+                    <li class="li_1"><a class="a_1" href="{{ route('home') }}"><strong>Inicio</strong></a></li>
+                    <li class="li_1"><a class="a_1" href="{{ route('posts.index')}}"><strong>Tatoos</strong></a></li>
+                    <li class="li_1"><a class="a_1" href="{{ route('about')}}"><strong>Blog</strong></a></li>
+                    <li class="li_1"><a class="a_1" href="{{ route('contact')}}"><strong>Contacto</strong></a></li>
+                    @guest
+                        <li class="li_1"><a class="a_1" href="{{ route('register')}}"><strong>Crear cuenta</strong></a></li>
+                        <li class="li_1"><a class="a_1" href="{{ route('login')}}"><strong>Iniciar sesion</strong></a></li>
+                    @endguest
+                    @auth
+                        <li class="li_1"><a href="#" class="a_1" ><strong>{{ Auth::user()->name }}</strong></a></li>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button class="salir"><strong>Logout</strong></button>
+                            {{--  <a class="nav-link active" aria-current="page" href="#"
+                            onclick="this.closest('form').submit()"> Logout
+                            </a>  --}}
+                        </form>
+                    @endauth
                 </ul>
             </nav>
         </div>
     </div>
 </div>
-
-        <div class="nav_1">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary color-blue" data-bs-theme="dark">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ route('home') }}"}}>Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"
-                                    href="{{ route('posts.index') }}">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ route('about') }}">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="{{ route('contact') }}">Contacto</a>
-                            </li>
-                            @guest
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page"
-                                        href="{{ route('register') }}">Registar</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Login</a>
-                                </li>
-                            @endguest
-                            @auth
-                                <a href="#" class="text-white">{{ Auth::user()->name }}</a>
-                                <form action="{{ route('logout') }}" method="POST">
-                                    @csrf
-                                    <button class="btn btn-outline-danger">Logout</button>
-                                    {{--  <a class="nav-link active" aria-current="page" href="#"
-                                    onclick="this.closest('form').submit()"> Logout
-                                    </a>  --}}
-                                </form>
-                            @endauth
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
 
 

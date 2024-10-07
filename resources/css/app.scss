@@ -14,11 +14,11 @@ body{
 
 .contenedor_1{
     position: relative;
+    text-decoration: none;
 }
 
 .slide_1{
     position: relative;
-    height: 90%;
     height: 100%;
     margin: auto;
 }
@@ -26,40 +26,47 @@ body{
 .nav_1{
     position: absolute;
     top: 10%;
-    width: 70%;
+    width:65%;
     margin: auto;
+    height: 20%;
+    font-size: 15px;
+    text-decoration: none;
 }
 
 .nav_2{
-    position: absolute;
-    top: 50%;
-    width: 80%;
+    position: relative;
+    top: 30%;
+    width:60%;
     float: left;
-    left: 45%;
+    left: 50%;
+    height: 65px;
+    background-color: black;
+    text-decoration: none;
 }
 
 .ul{
-    list-style-type: none;
+    list-style-type:none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    text-decoration: none;
 }
 
 .a_1{
     transition: 0.5s;
     text-decoration: none;
-    border-radius: 10px;
 }
 
 .li_1{
     float: left;
+    text-decoration: none;
 }
 
 .li_1 .a_1{
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 20px;
     text-decoration: none;
 }
 
@@ -67,12 +74,32 @@ body{
     background-color: red;
 }
 
-.text_1{
+.logo_1{
     position: relative;
-    float: left;
-    color: white;
-    bottom: 50%;
-    text-align: center;
-    background-color: aqua;
+    margin: auto;
+    height: 40%;
     width: 40%;
+    font-size: 20px;
 }
+
+.salir{
+    list-style-type: none;
+    display: block;
+    padding: 20px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: black ;
+    border: none;
+}
+
+.salir:hover {
+    color: white;
+    background-color: red;
+}
+
+
+
+
