@@ -12,12 +12,12 @@
         </div>
     @endauth
 
-    <div class="cont-p">
+    <div class="container">
         <div class="row align-items-center justify-content-center">
-            <div class="col-xl-10 col-sm-5 col-dm-6">
+            <div class="col-md-6 col-12">
                     <img src="{{ asset('img/portadas/logo_1.jpg') }}" class="card-img-bottom" alt="logo_1">
             </div>
-            <div class="col-sm-5 col-dm-5">
+            <div class="col-sm-6 col-12 mt-5">
                 <h5><strong>Alma negra</strong></h5>
                 <p>
                     Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
