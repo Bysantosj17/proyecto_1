@@ -7,10 +7,16 @@
 </ul>
 </nav> --}}
 <div class="contenedor_1">
-    <div class="slide_1">
+    <div class="row">
+
+        <h5 class="titulo_1"><strong>ALMA NEGRA</strong></h5>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
         <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
-
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
@@ -20,13 +26,16 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('img/carousel/tatoo_1.jpg') }}" class="d-block w-100" alt="car_1" height="600">
+                    <img src="{{ asset('img/carousel/tatoo_1.jpg') }}" class="d-block w-100" alt="car_1"
+                        height="600px">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('img/carousel/tatoo_2.jpg') }}" class="d-block w-100" alt="car_2" height="600">
+                    <img src="{{ asset('img/carousel/tatoo_2.jpg') }}" class="d-block w-100" alt="car_2"
+                        height="600px">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('img/carousel/tatoo_3.jpg') }}" class="d-block w-100" alt="car_3" height="600">
+                    <img src="{{ asset('img/carousel/tatoo_3.jpg') }}" class="d-block w-100" alt="car_3"
+                        height="600px">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -39,33 +48,37 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-        </div>
-        <h5 class="titulo_1"><strong>ALMA NEGRA</strong></h5>
-        <div class="nav_1">
-            <nav class="nav_2">
-                <ul class="ul_1">
-                    <li class="li_1"><a class="a_1" href="{{ route('home') }}"><strong>Inicio</strong></a></li>
-                    <li class="li_1"><a class="a_1" href="{{ route('posts.index')}}"><strong>Tatoos</strong></a></li>
-                    <li class="li_1"><a class="a_1" href="{{ route('about')}}"><strong>Blog</strong></a></li>
-                    <li class="li_1"><a class="a_1" href="{{ route('contact')}}"><strong>Contacto</strong></a></li>
-                    @guest
-                        <li class="li_1"><a class="a_1" href="{{ route('register')}}"><strong>Crear cuenta</strong></a></li>
-                        <li class="li_1"><a class="a_1" href="{{ route('login')}}"><strong>Iniciar sesion</strong></a></li>
-                    @endguest
-                    @auth
-                        <li class="li_1"><a href="#" class="a_1" ><strong>{{ Auth::user()->name }}</strong></a></li>
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button class="salir"><strong>Logout</strong></button>
-                            {{--  <a class="nav-link active" aria-current="page" href="#"
-                            onclick="this.closest('form').submit()"> Logout
-                            </a>  --}}
-                        </form>
-                    @endauth
-                </ul>
-            </nav>
+            <div class="nav_1">
+                <h4><strong>ALMA NEGRA</strong></h4><br>
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search"
+                                    aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         </div>
     </div>
 </div>
-
-
