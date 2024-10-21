@@ -2,55 +2,9 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
 body{
-    background-color:#19191bb3 ;
+    background-color:whites ;
 }
 
-.titulo_1{
-    position: absolute;
-    top: 5%;
-    float: left;
-}
-
-.contenedor_1{
-    position: relative;
-    text-decoration: none;
-}
-
-.slide_1{
-    position: relative;
-    height: 100%;
-    margin: auto;
-}
-
-.nav_1{
-    
-}
-
-.salir{
-    list-style-type: none;
-    display: block;
-    padding: 20px;
-    font-size: 15px;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: black ;
-    border: none;
-}
-
-.salir:hover {
-    color: white;
-    background-color: red;
-}
-
-.row{
-    font-size: auto;
-}
-
-img{
-    height: auto;
-}
 
 
 

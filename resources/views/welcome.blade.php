@@ -12,27 +12,43 @@
         </div>
     @endauth
 
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
-            <div class="col-md-6 col-12">
-                    <img src="{{ asset('img/portadas/logo_1.jpg') }}" class="card-img-bottom" alt="logo_1">
-            </div>
-            <div class="col-sm-6 col-12 mt-5">
-                <h5><strong>Alma negra</strong></h5>
+    <div class="container mt-5">
+        <div class="row mt-5">
+            <div class="col-12 col-md-6">
+                <h1><strong>Alma negra</strong></h1>
                 <p>
-                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500
-                    <br> <br>
-                    cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó
-                    una galería de textos y los mezcló de tal manera que logró hacer un libro de textos
-                    especimen. <br> <br>
-                    No sólo sobrevivió 500 años, sino que tambien ingresó como texto de
-                    relleno en documentos electrónicos, quedando esencialmente igual al original.
-                    Fue popularizado en los 60s con la creación de las hojas "Letraset"W
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Quibusdam fugit eaque iure. Natus unde voluptatibus neque nesciunt
+                    iusto ipsum fugiat, dignissimos veritatis suscipit, facere
+                    laboriosam totam, adipisci eveniet quae vel
+                </p>
+
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Quibusdam fugit eaque iure. Natus unde voluptatibus neque nesciunt
+                    iusto ipsum fugiat, dignissimos veritatis suscipit, facere
+                    laboriosam totam, adipisci eveniet quae vel
+                </p>
+
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Quibusdam fugit eaque iure.
+                </p>
+            </div>
+            <div class="col-12 col-md-6  align-self-center">
+                <center>
+                    <img class="img-fluid" src="{{ asset('img/portadas/logo_1.jpg') }}" alt="logo_1" >
+                </center>
             </div>
         </div>
     </div>
 
-
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <iframe width="100%" height="400xp" src="https://www.youtube.com/embed/ot5_z9Ri1-c" title="Aprender a tatuar desde 0 | Capítulo 3 | Sombreados, tinta blanca y más!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
 </x-layouts.app>
