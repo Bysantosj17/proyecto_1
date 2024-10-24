@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 //Laravel-9.test => welcome
-Route::view('/', 'welcome' )->name('home');
+Route::view('/', 'welcome')->name('home');
 
 //Laravel-9.test/contacto => contact
-Route::view('/contacto', 'contact' )->name('contact');
+Route::view('/contacto', 'contact')->name('contact');
 
 //Laravel-9.test/blog => blog
 // Route::get('/blog', [PostController::class, 'index'])->name('posts.index');
@@ -28,16 +28,16 @@ Route::view('/contacto', 'contact' )->name('contact');
 // Route::delete('/blog/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 
 
-Route::resource('blog', PostController::class,[
+Route::resource('blog', PostController::class, [
     'names' => 'posts',
-    'parameters'=> ['blog' => 'post']
+    'parameters' => ['blog' => 'post']
 ]);
 
 
 //Laravel-9.test/ =>about
-Route::view('/about', 'about' )->name('about');
+Route::view('/about', 'about')->name('about');
 
-Route::get('/login', function(){
+Route::get('/login', function () {
     return 'Login page';
 })->name('login');
 

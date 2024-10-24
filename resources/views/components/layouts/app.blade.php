@@ -8,6 +8,7 @@
     {{--  <link rel="stylesheet" href="/css/app.css">
     script src="/js/app.js"></script>  --}}
     @vite(['resources/js/app.js', 'resources/css/app.scss'])
+    <script type="text/javascript" src="https://counter6.optistats.ovh/private/counter.js?c=71pfn7lpc7zfmbwzpz6d2cclu6uptbt7&down=async" async></script>
 </head>
 <body>
 
@@ -21,5 +22,6 @@
 
 {{ $slot }}
 
+<x-layouts.footer/>
 </body>
 </html>

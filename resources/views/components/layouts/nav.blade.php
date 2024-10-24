@@ -9,7 +9,7 @@
 
 <nav class="navbar navbar-expand-lg bg-dark text-light">
     <div class="container-fluid">
-        <a class="navbar-brand text-light" href="#">Alma negra</a>
+        <a class="navbar-brand text-light" href="{{ route('home') }}">Alma negra</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span  class="bi bi-segmented-nav"></span>
@@ -17,38 +17,36 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Home</a>
+                    <a class="nav-link text-light" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Tatoos</a>
+                    <a class="nav-link text-light" href="{{ route('posts.index') }}">Tatoos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Nosotros</a>
+                    <a class="nav-link text-light" href="{{ route('about') }}">Acerca de</a>
                 </li>
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ route('register') }}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ route('login') }}">inciar session</a>
+                    </li>
+                @endguest
+                @auth
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">
+                        {{ Auth::user()->name }}
+                    </a>
+                </li>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <div class="col pe-5">
+                        <button class="btn btn-outline-danger">Salir</button>
+                    </div>
+                </form>
+                @endauth
             </ul>
         </div>
     </div>
 </nav>
-
-<div id="carouselExample" class="carousel slide">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{{ asset('img/carousel/tatoo_1.jpg') }}" class="d-block w-100" alt="tatoo_1">
-        </div>
-        <div class="carousel-item">
-            <img src="{{ asset('img/carousel/tatoo_2.jpg') }}" class="d-block w-100" alt="tatoo_2">
-        </div>
-        <div class="carousel-item">
-            <img src="{{ asset('img/carousel/tatoo_3.jpg') }}" class="d-block w-100" alt="tatoo_3">
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-</div>
