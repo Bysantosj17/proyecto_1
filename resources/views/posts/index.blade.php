@@ -55,9 +55,9 @@
     <div class="container mb-5">
         <div class="row">
             @foreach ($posts as $post)
-                <div class="col p-4">
-                    <div class="card">
-                        <img src="{{ asset('img/tatoos/tatoo_1.jpg') }}" class="card-img-top img-fluid" alt="..." height="50%">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 p-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ $post->tatoos }}" class="card-img-top img-fluid" alt="..." style="width: 300px">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="{{ route('posts.show', $post) }}">
@@ -65,7 +65,7 @@
                                 </a>
                             </h5>
                             <p class="card-text">
-                                This is a longer card with supporting
+                               {{$post->body }}
                             </p>
                         </div>
                     </div>

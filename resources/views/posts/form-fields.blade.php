@@ -22,7 +22,10 @@
 
 <label>
     Subir imagen:
-    <input type="file" name="tatoos">
+    <input type="file" name="tatoos" accept="image/*">
+    @error('tatoos')
+        <small class="text-danger">{{ $message }}</small>
+    @enderror
 </label>
 
 <br> <br>

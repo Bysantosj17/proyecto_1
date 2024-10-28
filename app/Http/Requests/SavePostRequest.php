@@ -29,7 +29,8 @@ class SavePostRequest extends FormRequest
         // }
         return [
             'title' => ['required', 'min:4'],
-            'body' => ['required']
+            'body' => ['required'],
+            'tatoos' => ['required|image']
         ];
     }
 }

@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SavePostRequest;
 use App\Models\Post;
+use Faker\Core\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -20,7 +23,7 @@ class PostController extends Controller
 
         $posts = Post::get();
 
-        return view('posts.index', ['posts'=> $posts]);
+        return view('posts.index', ['posts' => $posts]);
     }
 
     public function show(Post $post)
@@ -31,21 +34,24 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('posts.create', ['post' => New Post]);
+        return view('posts.create', ['post' => new Post]);
     }
 
     public function store(Request $request)
     {
-
         $post = new Post();
 
-        if( $request->hasFile('tatoos')){
-            $file = $request->file('tatoos');
-            $destinationPath = 'images/tatoos/';
-            $filename = time() . '-' . $file->getClientOriginalName();
-            $uploadSuccess = $request->file('tatoos')->move($destinationPath, $filename);
-            $post->tatoos = $destinationPath . $filename;
-        }
+        $request->validate([
+            'tatoos' => 'required|image'
+        ]);
+
+        $tatoos = $request->file('tatoos')->store('public/tatoos');
+
+        $url = Storage::url($tatoos);
+
+        //dd($url);
+        // return $url;
+
         // $validated = $request->validate([
         //     'title' => ['required', 'min:4'],
         //     'body' => ['required']
@@ -54,8 +60,8 @@ class PostController extends Controller
         // ]*/);
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->tatoos = $url;
         $post->save();
-
         // Post::create([
         //     'title' => $request->input('title'),
         //     'body' => $request->input('body'),
@@ -67,11 +73,13 @@ class PostController extends Controller
         return to_route('posts.index')->with('status', 'Post creado!');
     }
 
-    public function edit(Post $post){
+    public function edit(Post $post)
+    {
         return view('posts.edit', ['post' => $post]);
     }
 
-    public function update(SavePostRequest $request, Post $post){
+    public function update(SavePostRequest $request, Post $post)
+    {
 
         // $validated = $request->validate([
         //     // 'title' => ['required', 'min:4'],
@@ -97,7 +105,8 @@ class PostController extends Controller
         return to_route('posts.show', $post)->with('status', 'Post creado!');
     }
 
-    public function destroy(Post $post){
+    public function destroy(Post $post)
+    {
         $post->delete();
 
         return to_route('posts.index')->with('status', 'Post eliminado');
