@@ -34,21 +34,27 @@ class PostController extends Controller
         return view('posts.create', ['post' => New Post]);
     }
 
-    public function store(SavePostRequest $request)
+    public function store(Request $request)
     {
 
-        Post::create($request->validated());
+        $post = new Post();
+
+        if( $request->hasFile('tatoos')){
+            $file = $request->file('tatoos');
+            $destinationPath = 'images/tatoos/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('tatoos')->move($destinationPath, $filename);
+            $post->tatoos = $destinationPath . $filename;
+        }
         // $validated = $request->validate([
         //     'title' => ['required', 'min:4'],
         //     'body' => ['required']
         // ]/*,[
         //     'title.required' => 'Error diferente :attribute'
         // ]*/);
-
-        // $post = new Post;
-        // $post->title = $request->input('title');
-        // $post->body = $request->input('body');
-        // $post->save();
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
 
         // Post::create([
         //     'title' => $request->input('title'),

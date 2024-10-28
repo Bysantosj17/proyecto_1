@@ -17,3 +17,12 @@
         <small style="color: red">{{ $message }}</small>
     @enderror
 </label>
+
+<br> <br>
+
+<label>
+    Subir imagen:
+    <input type="file" name="tatoos">
+</label>
+
+<br> <br>

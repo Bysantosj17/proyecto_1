@@ -25,6 +25,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-light" href="{{ route('about') }}">Acerca de</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('contact') }}">Contactame</a>
+                </li>
                 @guest
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('register') }}">Register</a>
@@ -34,17 +37,17 @@
                     </li>
                 @endguest
                 @auth
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="#">
-                        {{ Auth::user()->name }}
-                    </a>
-                </li>
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <div class="col pe-5">
-                        <button class="btn btn-outline-danger">Salir</button>
-                    </div>
-                </form>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">
+                            {{ Auth::user()->name }}
+                        </a>
+                    </li>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <div class="col pe-5">
+                            <button class="btn btn-outline-danger">Salir</button>
+                        </div>
+                    </form>
                 @endauth
             </ul>
         </div>

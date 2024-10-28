@@ -10,5 +10,7 @@
     title="Contact"
     meta-description="Contact meta description"
 >
-    <h1 class="text-primary text-center">Contacto</h1>
+    <h1 class="text-primary text-center mt-4">
+        Contacto
+    </h1>
 </x-layouts.app>

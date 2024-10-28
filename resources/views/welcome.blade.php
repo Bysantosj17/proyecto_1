@@ -6,13 +6,12 @@
     <p>hola</p>
 </x-slot>  --}}
 <x-layouts.app title="Home" meta-description="Home meta description">
+    <x-layouts.carusel/>
     @auth
         <div class="text-white"> Usuario autenticado:
             {{ Auth::user()->name }}
         </div>
     @endauth
-
-    <x-layouts.carusel/>
 
     <div class="container mt-5">
         <div class="row mt-5">

@@ -7,7 +7,7 @@
     {{--  @foreach($errors->all() as $error)
         <p>{{ $error }}</p>
     @endforeach  --}}
-    <form action="{{ route('posts.store') }}" method="POST">
+    <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         @include('posts.form-fields')
