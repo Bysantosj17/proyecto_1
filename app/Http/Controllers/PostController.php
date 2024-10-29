@@ -21,7 +21,7 @@ class PostController extends Controller
     {
         /*$posts = DB::table('posts')->get();*/
 
-        $posts = Post::get();
+        $posts = Post::paginate(25);
 
         return view('posts.index', ['posts' => $posts]);
     }

@@ -52,7 +52,7 @@
             </div>
         @endforeach
     </div> --}}
-    <div class="container mb-5">
+    {{--  <div class="container mb-5">
         <div class="row">
             @foreach ($posts as $post)
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 p-4">
@@ -80,6 +80,35 @@
                             @endauth
                         </div>
                     </div>
+                </div>
+            @endforeach
+        </div>
+    </div>  --}}
+
+
+    <div id="galeria" class="container">
+        <div class="row">
+            @foreach($posts as $post)
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <img src="{{asset($post->tatoos)}}" alt="">
+                    <h5 class="mt-2">
+                        <a href="{{ route('posts.show', $post) }}">
+                            {{ $post->title }}
+                        </a>
+                    </h5>
+                    <p class="mt-2">
+                        {{ $post->body }}
+                    </p>
+                    @auth
+                        <div class="mt-2">
+                            <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <a class="btn btn-primary" href="{{ route('posts.edit', $post) }}">Editar</a>
+                                <button class="btn btn-danger" type="submit">Eliminar</button>
+                            </form>
+                        </div>
+                    @endauth
                 </div>
             @endforeach
         </div>

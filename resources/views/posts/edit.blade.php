@@ -13,11 +13,10 @@
 
                     <br>
 
-                    <button type="submit">Enviar</button>
-
+                    <button class="btn btn-outline-primary" type="submit">Enviar</button>
+                    <a class="btn btn-primary ms-5" href="{{ route('posts.index') }}">Regresar</a>
                 </form>
-                <br>
-                <a href="{{ route('posts.index') }}">Regresar</a>
+
             </div>
         </div>
     </div>

@@ -21,8 +21,8 @@
 <br> <br>
 
 <label>
-    Subir imagen:
-    <input type="file" name="tatoos" accept="image/*">
+    Subir imagen: <br>
+    <input type="file" name="tatoos" accept="image/*" class="mt-4 mb-4">
     @error('tatoos')
         <small class="text-danger">{{ $message }}</small>
     @enderror
