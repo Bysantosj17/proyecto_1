@@ -1,7 +1,7 @@
-<div class="container-fluid bg-dark p-5 text-center">
+<div class="container-fluid bg-dark p-5 text-center mt-4">
     <div class="row justify-content-center">
         <div class="col-4 text-start">
-            <a class="text-decoration-none text-light" href="">Terminis de servicio</a> <br>
+            <a class="text-decoration-none text-light" href="">Terminos de servicio</a> <br>
             <a class="text-decoration-none text-light" href="">Politica de privacidad</a> <br>
             <a class="text-decoration-none text-light" href="">Contacto</a>
         </div>
@@ -22,7 +22,7 @@
             </a>
         </div>
         <div class="col-12 ms-12 mt-5">
-            <p class="text-light text-center">
+            <p class="text-light text-center mb-0">
                 © 2024
                 <br>ALMA NEGRA TATTOO ESTUDIO
             </p>

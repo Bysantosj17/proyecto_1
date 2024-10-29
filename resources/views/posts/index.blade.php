@@ -56,8 +56,9 @@
         <div class="row">
             @foreach ($posts as $post)
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 p-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{ $post->tatoos }}" class="card-img-top img-fluid" alt="..." style="width: 300px">
+                    <div class="card" style="width: 20rem;">
+                        <img src="{{ $post->tatoos }}" class="card-img-top img-fluid" alt="..."
+                            style="width: 300px">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="{{ route('posts.show', $post) }}">
@@ -65,15 +66,22 @@
                                 </a>
                             </h5>
                             <p class="card-text">
-                               {{$post->body }}
+                                {{ $post->body }}
                             </p>
+                            @auth
+                                <div>
+                                    <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <a class="btn btn-primary" href="{{ route('posts.edit', $post) }}">Editar</a>
+                                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                                    </form>
+                                </div>
+                            @endauth
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-
     </div>
-
-
 </x-layouts.app>

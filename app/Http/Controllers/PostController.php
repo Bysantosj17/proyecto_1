@@ -78,7 +78,7 @@ class PostController extends Controller
         return view('posts.edit', ['post' => $post]);
     }
 
-    public function update(SavePostRequest $request, Post $post)
+    public function update(Request $request, Post $post)
     {
 
         // $validated = $request->validate([
@@ -98,11 +98,30 @@ class PostController extends Controller
         //     'body' => $request->input('body'),
         // ]);
 
-        $post->update($request->validated());
+        $request->validate([
+            'tatoos' => 'required|image'
+        ]);
+
+        $tatoos = $request->file('tatoos')->store('public/tatoos');
+
+        $url = Storage::url($tatoos);
+
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->tatoos = $url;
+        $post->update();
+
+        // $post->update([
+        //     'title' => $request->input('title'),
+        //     'body' => $request->input('body'),
+        //     'tatoos' => $request->input('tatoos'),
+        // ]);
+
+        // $post->update($request->validated());
 
         session()->flash('status', 'Post se actualizo');
 
-        return to_route('posts.show', $post)->with('status', 'Post creado!');
+        return to_route('posts.show', $post)->with('status', 'Post editado!');
     }
 
     public function destroy(Post $post)
