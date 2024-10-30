@@ -29,8 +29,10 @@
                     <a class="nav-link text-light" href="{{ route('contact') }}">Contactame</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{{route('citas')}}">Citas</a>
+                    <a class="nav-link text-light" href="{{ route('citas')}}">Citas</a>
                 </li>
+
+
                 @guest
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('register') }}">Register</a>
@@ -39,6 +41,8 @@
                         <a class="nav-link text-light" href="{{ route('login') }}">inciar session</a>
                     </li>
                 @endguest
+
+
                 @auth
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#">

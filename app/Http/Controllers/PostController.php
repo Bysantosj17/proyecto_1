@@ -66,16 +66,16 @@ class PostController extends Controller
         //     'title' => $request->input('title'),
         //     'body' => $request->input('body'),
         // ]);
-
+        //
 
         // session()->flash('status', 'Post creado');
 
         return to_route('posts.index')->with('status', 'Post creado!');
     }
 
-    public function edit(Post $post)
+    public function appointment()
     {
-        return view('posts.edit', ['post' => $post]);
+        return view('posts.appointment');
     }
 
     public function update(Request $request, Post $post)
@@ -124,14 +124,15 @@ class PostController extends Controller
         return to_route('posts.show', $post)->with('status', 'Post editado!');
     }
 
+    public function edit(Post $post)
+    {
+        return view('posts.cita', ['post' => $post]);
+    }
+
     public function destroy(Post $post)
     {
         $post->delete();
 
         return to_route('posts.index')->with('status', 'Post eliminado');
-    }
-
-    public function citas(){
-        return view('citas');
     }
 }

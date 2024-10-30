@@ -1,5 +1,5 @@
 <x-layouts.app
-    :title="$post->title"
+    :title="$post->title" 
     :meta-description="$post->body"
 >
     <div class="container mt-5">
