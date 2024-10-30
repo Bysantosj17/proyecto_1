@@ -14,6 +14,8 @@ Route::view('/', 'welcome')->name('home');
 
 //Laravel-9.test/contacto => contact
 Route::view('/contacto', 'contact')->name('contact');
+Route::get('/blog/citas', [PostController::class, 'citas']) ->name('citas');
+
 
 //Laravel-9.test/blog => blog
 // Route::get('/blog', [PostController::class, 'index'])->name('posts.index');

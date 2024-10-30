@@ -130,4 +130,8 @@ class PostController extends Controller
 
         return to_route('posts.index')->with('status', 'Post eliminado');
     }
+
+    public function citas(){
+        return view('citas');
+    }
 }
