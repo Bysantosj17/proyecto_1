@@ -76,7 +76,7 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
 
-        // $validated = $request->validate([
+        // $validated = $request->validatehola([
         //     // 'title' => ['required', 'min:4'],
         //     // 'body' => ['required']
         // ]/*,[
