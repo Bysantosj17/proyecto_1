@@ -2,7 +2,6 @@
         <div class="col mb-5">
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
-
                     <div class="carousel-item active">
                         <img src="{{ asset('img/carousel/tatoo_1.jpg') }}" class="d-block w-100 img-fluid" alt="tatoo_1">
                     </div>

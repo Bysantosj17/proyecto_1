@@ -73,11 +73,6 @@ class PostController extends Controller
         return to_route('posts.index')->with('status', 'Post creado!');
     }
 
-    public function appointment()
-    {
-        return view('posts.appointment');
-    }
-
     public function update(Request $request, Post $post)
     {
 
@@ -126,7 +121,7 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        return view('posts.cita', ['post' => $post]);
+        return view('posts.edit', ['post' => $post]);
     }
 
     public function destroy(Post $post)
