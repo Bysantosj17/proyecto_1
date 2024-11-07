@@ -21,9 +21,10 @@ Route::resource('blog', PostController::class, [
 
 //Laravel-9.test/contacto => contact
 Route::view('/contacto', 'contact')->name('contact');
-Route::view('/citas', 'citas')->name('citas_tatuaje');
+Route::view('/citas', 'citas')->name('citas.tatuaje');
 
 Route::get('/cita/crear_cita', [CitaController::class, 'crear_cita'])->name('cita.crear_cita');
+Route::get('/cita', [CitaController::class, 'store'])->name('citas.store');
 
 //Laravel-9.test/blog => blog
 // Route::get('/blog', [PostController::class, 'index'])->name('posts.index');
