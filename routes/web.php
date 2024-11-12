@@ -18,13 +18,23 @@ Route::resource('blog', PostController::class, [
     'parameters' => ['blog' => 'post']
 ]);
 
+// Route::resource('cita', PostController::class, [
+//     'names' => 'tatoos',
+//     'parameters' => ['cita' => 'tatoo']
+// ]);
+
 
 //Laravel-9.test/contacto => contact
 Route::view('/contacto', 'contact')->name('contact');
-Route::view('/citas', 'citas')->name('citas.tatuaje');
 
+// Route::view('/cita', [CitaController::class, 'index_t'])->name('citas.index');
+
+Route::get('/cita', [CitaController::class, 'index_t'])->name('citas.citas');
 Route::get('/cita/crear_cita', [CitaController::class, 'crear_cita'])->name('cita.crear_cita');
-Route::get('/cita', [CitaController::class, 'store'])->name('citas.store');
+Route::post('/cita', [CitaController::class, 'store'])->name('citas.store');
+
+Route::get('/cita/show/{cita}', [CitaController::class, 'show_t'])->name('cita.show_t');
+Route::get('/cita/cita_1', [CitaController::class, 'edit_t'])->name('cita.edit_t');
 
 //Laravel-9.test/blog => blog
 // Route::get('/blog', [PostController::class, 'index'])->name('posts.index');

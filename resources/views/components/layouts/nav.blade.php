@@ -29,7 +29,7 @@
                     <a class="nav-link text-light" href="{{ route('contact') }}">Contactame</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{{ route('citas.tatuaje')}}">Citas</a>
+                    <a class="nav-link text-light" href="{{ route('citas.citas')}}">Citas</a>
                 </li>
 
 

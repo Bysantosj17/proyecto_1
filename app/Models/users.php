@@ -21,6 +21,7 @@ class users extends Model
         'email',
         'password',
     ];
+    
 
     /**
      * The attributes that should be hidden for serialization.
