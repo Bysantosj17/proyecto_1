@@ -48,4 +48,39 @@ class CitaController extends Controller
     {
         return view('citas.show_t', ['cita' => $cita]);
     }
+
+    public function edit_t(Cita $cita)
+    {
+        return view('citas.edit_t', ['cita' => $cita]);
+    }
+
+    public function update_t(Request $request, Cita $cita)
+    {
+        $request->validate([
+            'tatoos' => 'required|image',
+            'tel' => 'required|max:10'
+        ]);
+
+        $tatoos = $request->file('tatoos')->store('public/tatoos/citas');
+
+        $url = Storage::url($tatoos);
+
+        $cita->name = $request->input('name');
+        $cita->descripcion = $request->input('descripcion');
+        $cita->tel = $request->input('tel');
+        $cita->email = $request->input('email');
+        $cita->tatoos = $url;
+        $cita->update();
+
+        session()->flash('status', 'cita actualizada');
+
+        return to_route('cita.show_t', $cita)->with('status', '¡Cita acrualizada!');
+    }
+
+    public function destroy_t(Cita $cita)
+    {
+        $cita->delete();
+
+        return to_route('citas.citas')->with('status', 'Cita eliminada!');
+    }
 }

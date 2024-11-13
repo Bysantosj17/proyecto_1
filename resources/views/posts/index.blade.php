@@ -17,10 +17,10 @@
         </div>
     </div>
 
-    <div id="galeria" class="container">
-        <div class="row">
+    <div {{-- id="galeria" --}} class="container-sm">
+        <div id="row_1" class="row">
             @foreach($posts as $post)
-                <div class="col-lg-4 col-md-6 col-sm-12">
+                {{--  <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-2 col-xxl-2 mb-5 me-5">
                     <a href="{{ route('posts.show', $post) }}">
                         <img src="{{asset($post->tatoos)}}" alt="">
                     </a>
@@ -33,7 +33,7 @@
                         {{ $post->body }}
                     </p>
                     @auth
-                        <div class="mt-2">
+                        <div class="mt-2 ms-4">
                             <form action="{{ route('posts.destroy', $post) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -42,8 +42,24 @@
                             </form>
                         </div>
                     @endauth
-                </div>
+                </div>  --}}
+                    <div id="col_1" class="col-12 col-sm-6 col-md-3 ">
+                        <a href="{{ route('posts.show', $post) }}">
+                            <img id="img_1" src="{{asset($post->tatoos)}}" alt="">
+                            </a>
+                            @auth
+                                <div class="mt-2 ms-4">
+                                    <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <a class="btn btn-primary" href="{{ route('posts.edit', $post) }}">Editar</a>
+                                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                                    </form>
+                                </div>
+                            @endauth
+                    </div>
             @endforeach
         </div>
+
     </div>
 </x-layouts.app>

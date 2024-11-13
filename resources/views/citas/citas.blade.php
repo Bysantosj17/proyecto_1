@@ -18,18 +18,18 @@
                         @foreach ($citas as $cita)
                             <tr class="align-middle">
                                     <td><a class="nav-link" href="{{ route('cita.show_t' , $cita) }}">{{ $cita->name }}</a></td>
-                                    <td><p>{{ $cita->tel }}</p></td>
-                                    <td><p>{{ $cita->email }}</p></td>
-                                    <td><p>{{ $cita->descripcion }}</p></td>
-                                    <td>
-                                        <img src="{{ asset($cita->tatoos) }}" alt="" width="auto" height="100px">
-                                    </td>
-                                    <td><p>{{ $cita->updated_at }}</p></td>
-                                    <form action="">
+                                    <td><a class="nav-link" href="{{ route('cita.show_t' , $cita) }}">{{ $cita->tel }}</a></td>
+                                    <td><a class="nav-link" href="{{ route('cita.show_t' , $cita) }}">{{ $cita->email }}</a></td>
+                                    <td><a class="nav-link" href="{{ route('cita.show_t' , $cita) }}">{{ $cita->descripcion }}</a></td>
+                                    <td><a href="{{ route('cita.show_t' , $cita) }}"><img src="{{ asset($cita->tatoos) }}" alt="" width="auto" height="100px"></a></td>
+                                    <td><a class="nav-link" href="{{ route('cita.show_t' , $cita) }}">{{ $cita->updated_at }}</a></td>
+                                    <form action="{{ route('cita.destroy_t', $cita) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
                                         <td>
                                             <button class="btn btn-danger" href="">Eliminar</button>
                                         </td>
-                                        <td><a class="btn btn-success" href="#">Editar</a></td>
+                                        <td><a class="btn btn-success" href="{{ route('cita.edit_t', $cita) }}">Editar</a></td>
                                     </form>
                             </tr>
                         @endforeach

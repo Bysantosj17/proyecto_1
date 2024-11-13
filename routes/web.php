@@ -34,7 +34,9 @@ Route::get('/cita/crear_cita', [CitaController::class, 'crear_cita'])->name('cit
 Route::post('/cita', [CitaController::class, 'store'])->name('citas.store');
 
 Route::get('/cita/show/{cita}', [CitaController::class, 'show_t'])->name('cita.show_t');
-Route::get('/cita/cita_1', [CitaController::class, 'edit_t'])->name('cita.edit_t');
+Route::get('/cita/{cita}/edit_t', [CitaController::class, 'edit_t'])->name('cita.edit_t');
+Route::patch('/cita/{cita}', [CitaController::class, 'update_t'])->name('cita.update_t');
+Route::delete('/cita/{cita}', [CitaController::class, 'destroy_t'])->name('cita.destroy_t');
 
 //Laravel-9.test/blog => blog
 // Route::get('/blog', [PostController::class, 'index'])->name('posts.index');

@@ -182,8 +182,8 @@ return [
 
     'attributes' => [
         'title' => 'titulo',
-        'body' => 'contenido'
+        'body' => 'contenido',
+        'tel' => 'telefono'
     ],
 
 ];
-

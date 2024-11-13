@@ -1,21 +1,50 @@
 @import 'bootstrap/scss/bootstrap';
 @import "node_modules/bootstrap/scss/bootstrap";
 
-body{
+*{
+    box-sizing: border-box;
+}
+
+body_1{
     background-color:whites ;
+    margin:  0;
+    padding: 0;
 
 }
 
-#galeria .col-lg-4 {
-    margin: 0 !important;
-    padding: 25px;
+// #galeria .col-lg-4 {
+//     margin: 0 !important;
+//     padding: 25px;
+// }
+
+// #galeria img {
+//     width: 250px;
+//     height: 250px;
+// }
+
+// #galeria img:hover {
+//     border:5px solid #f7f7f7;
+// }
+
+#img_1{
+    width: 100%;
 }
 
-#galeria img {
-    width: auto;
-    height: 250px;
+#img_1:hover{
+    border:2px solid #f7f7f7;
 }
 
-#galeria img:hover {
-    border:5px solid #f7f7f7;
+#col_1 #img_1{
+    margin-top: 5px;
 }
+
+#row_1{
+    display: flex;
+    padding-top: 5px;
+}
+
+#col_1{
+    padding: 5px;
+}
+
+

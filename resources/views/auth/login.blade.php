@@ -40,13 +40,11 @@
                         </label>
                     </div>
 
-                    <br>
-
-                    <button class="btn btn-outline-primary" type="submit">Login</button>
+                    <button class="btn btn-success" type="submit">Login</button>
+                    <a class="btn btn-outline-primary" href="{{ route('register') }}">Registar</a>
 
                 </form>
 
-                <a class="btn btn-primary mt-4" href="{{ route('register') }}">Registar</a>
             </div>
         </div>
     </div>
