@@ -3,8 +3,9 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1 class="text-center mt-5">Citas</h1>
-                <table class="table table-hover">
+                <h1 class="text-center mt-5 mb-5">Citas</h1>
+                <h4> <a href="" class="btn btn-success">Calendario</a></h4>
+                <table class="table table-hover mt-5">
                     <thead>
                         <tr>
                             <th>Nombre:</th>
@@ -37,8 +38,6 @@
                 </table>
             </div>
         </div>
-        <a class="btn btn-outline-primary" href="{{ route('cita.crear_cita') }}">Crear una cita</a>
+        <a class="btn btn-outline-primary mt-5 mb-5" href="{{ route('cita.crear_cita') }}">Crear una cita</a>
     </div>
-
-
 </x-layouts.app>
