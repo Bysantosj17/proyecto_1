@@ -45,7 +45,7 @@
 
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">
+                        <a class="nav-link text-light" href="{{ route('auth.perfil', Auth::user()->id)}}">
                             {{ Auth::user()->name }}
                         </a>
                     </li>

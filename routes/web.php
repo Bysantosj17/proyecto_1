@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\CitaController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Sanctum\Http\Middleware\AuthenticateSession;
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -61,6 +62,8 @@ Route::get('/login', function () {
 Route::view('/login', 'auth.login')->name('login');
 Route::post('login', [AuthenticatedSessionController::class, 'store']);
 Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+Route::get('/perfil/{users}', [AuthenticatedSessionController::class, 'perfil'])->name('auth.perfil');
 
 Route::view('/register', 'auth.register')->name('register');
 Route::post('/register', [RegisteredUserController::class, 'store']);

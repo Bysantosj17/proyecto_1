@@ -94,7 +94,8 @@ class PostController extends Controller
         // ]);
 
         $request->validate([
-            'tatoos' => 'required|image'
+            'tatoos' => 'required|image',
+
         ]);
 
         $tatoos = $request->file('tatoos')->store('public/tatoos');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\users;
 use Dotenv\Exception\ValidationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -44,4 +45,11 @@ class AuthenticatedSessionController extends Controller
         return to_route('login')
             ->with('status', 'You are logged out!');
     }
+
+    public function perfil(users $users){
+
+        return view('auth.perfil', ['users' => $users]);
+    }
+
+
 }

@@ -1,8 +1,8 @@
 <x-layouts.app
-    :title="$post->title" 
+    :title="$post->title"
     :meta-description="$post->body"
 >
-    <div class="container mt-5">
+    <div class="container-sm mt-5  text-center">
         <div class="row">
             <div class="col">
                 <h1><center><strong>Editar Formulario:</strong></center></h1>

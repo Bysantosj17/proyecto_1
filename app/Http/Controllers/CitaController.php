@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRequest;
 use App\Models\Cita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -22,13 +23,16 @@ class CitaController extends Controller
         return view('citas.crear_cita', ['cita' => new Cita]);
     }
 
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $cita = new Cita();
 
-        $request->validate([
-            'tatoos' => 'required|image'
-        ]);
+        // $request->validate([
+        //     'tatoos' => 'required|image',
+        //     'tel' => ['required', 'max:10', "unique:citas,tel, {$cita->id}" ] ,
+        //     'email' => ['required', "unique:citas,email, {$cita->id}"],
+        //     'name' => 'required',
+        // ]);
 
         $tatoos = $request->file('tatoos')->store('public/tatoos/citas');
 
