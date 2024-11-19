@@ -26,25 +26,44 @@ body_1{
 //     border:5px solid #f7f7f7;
 // }
 
+// #img_1{
+//     width: 100%;
+// }
+
+// #img_1:hover{
+//     border:2px solid #f7f7f7;
+// }
+
+// #col_1 #img_1{
+//     margin-top: 5px;
+// }
+
+// #row_1{
+//     display: flex;
+//     padding-top: 5px;
+// }
+
+// #col_1{
+//     padding: 5px;
+// }
+
+
 #img_1{
     width: 100%;
-}
 
-#img_1:hover{
-    border:2px solid #f7f7f7;
-}
-
-#col_1 #img_1{
-    margin-top: 5px;
 }
 
 #row_1{
     display: flex;
-    padding-top: 5px;
+    padding: 5px;
+    flex-wrap: wrap;
 }
 
-#col_1{
+#column_1{
+    flex: 25%;
     padding: 5px;
 }
+
+
 
 

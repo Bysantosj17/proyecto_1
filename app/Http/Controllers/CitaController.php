@@ -39,9 +39,13 @@ class CitaController extends Controller
         $url = Storage::url($tatoos);
 
         $cita->name = $request->input('name');
+        $cita->hora_reserva = $request->input('hora_reserva');
         $cita->descripcion = $request->input('descripcion');
         $cita->tel = $request->input('tel');
         $cita->email = $request->input('email');
+        $cita->color = $request->input('color');
+        $cita->inicio = $request->input('fecha_reserva');
+        $cita->final = $request->input('fecha_reserva');
         $cita->tatoos = $url;
         $cita->save();
 
@@ -73,6 +77,9 @@ class CitaController extends Controller
         $cita->descripcion = $request->input('descripcion');
         $cita->tel = $request->input('tel');
         $cita->email = $request->input('email');
+        $cita->color = $request->input('color');
+        $cita->inicio = $request->input('fecha_reserva');
+        $cita->final = $request->input('fecha_reserva');
         $cita->tatoos = $url;
         $cita->update();
 

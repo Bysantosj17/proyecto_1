@@ -1,7 +1,7 @@
 <x-layouts.app title="Blog" meta-description="Blog meta description">
 
     <div class="container">
-        <div class="eow">
+        <div class="row">
             <div class="col">
                 <div class="col mt-5">
                     <h1>
@@ -18,7 +18,7 @@
     </div>
 
     <div {{-- id="galeria" --}} class="container-sm">
-        <div id="row_1" class="row">
+        <div id="row_1" >
             @foreach($posts as $post)
                 {{--  <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-2 col-xxl-2 mb-5 me-5">
                     <a href="{{ route('posts.show', $post) }}">
@@ -43,7 +43,7 @@
                         </div>
                     @endauth
                 </div>  --}}
-                    <div id="col_1" class="col-12 col-sm-6 col-md-3 ">
+                    <div id="col_1" class="col-12 col-sm-6 col-md-3">
                         <a href="{{ route('posts.show', $post) }}">
                             <img id="img_1" src="{{asset($post->tatoos)}}" alt="">
                             </a>
@@ -60,6 +60,5 @@
                     </div>
             @endforeach
         </div>
-
     </div>
 </x-layouts.app>

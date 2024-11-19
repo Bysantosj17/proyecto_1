@@ -29,6 +29,10 @@ class PostController extends Controller
     public function show(Post $post)
     {
         /*return Post::findOrFail($post);*/
+
+        // $datos =  request()->all();
+        // return response()->json($datos);
+
         return view('posts.show', ['post' => $post]);
     }
 

@@ -15,12 +15,17 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->id();
             // $table->unsignedBigInteger('users_id');
-            // $table->foreign('users_id')->references('id')->on('users');
+            // $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade);
             $table->string("name");
             $table->string("descripcion");
             $table->string("email");
             $table->integer("tel");
             $table->string('tatoos');
+            $table->dateTime('inicio');
+            $table->dateTime('final');
+            $table->time('hora_reserva');
+            $table->string('color');
+
             $table->timestamps();
         });
     }

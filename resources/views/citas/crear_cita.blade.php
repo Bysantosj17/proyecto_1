@@ -13,6 +13,7 @@
                 @include('citas.form-cita')
 
                 <br>
+ 
                 <div class="col-9 justify-content-start">
                     <button class="btn btn-primary mt-5" type="submit"> Registrar cita</button> <br>
                     <a class="btn btn-outline-primary mt-5"  href="{{ route('citas.citas') }}">Regresar a citas</a>

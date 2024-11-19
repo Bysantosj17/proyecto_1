@@ -21,7 +21,12 @@ class users extends Model
         'email',
         'password',
     ];
-    
+
+    // protected function Cita()
+    // {
+    //     return $this->hasMany(Cita::class);
+    // }
+
 
     /**
      * The attributes that should be hidden for serialization.

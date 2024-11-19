@@ -8,9 +8,13 @@
             <div class="col text-start">
                 <h3>{{ $cita->descripcion }}</h3>
                 <h3 class="text-primary">{{ $cita->tel }}</h3>
-                <h3 >{{ $cita->email }}</h3>
-                <h3 class="text-success">{{ $cita->updated_at }}</h3>
+                <h3>{{ $cita->email }}</h3>
+                <h3 class="text-success">{{ $cita->inicio}} {{ $cita->hora_reserva }}</h3>
+                <h3>Baner:</h3>
+                <div style="background-color: {{ $cita->color }}; height:10px;">
+                </div>
             </div>
+
             <div class="col">
                 <a class="btn btn-outline-primary mt-5 me-5" href="{{ route('citas.citas') }}">Regresar a citas</a>
                 <a class="btn btn-outline-success mt-5" href="{{ route('cita.edit_t', $cita) }}">Editar</a>
