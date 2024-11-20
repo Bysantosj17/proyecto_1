@@ -24,9 +24,11 @@ class StoreRequest extends FormRequest
     {
         return [
             'tatoos' => 'required|image',
-            'tel' => ['required', 'max:10'] ,
+            'tel' => ['required', 'max:10'],
             'email' => ['required'],
             'name' => 'required',
+            'fecha_reserva' => 'required',
+            'hora_reserva' => 'required'
         ];
     }
 

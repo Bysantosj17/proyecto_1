@@ -5,6 +5,7 @@
             <div class="col">
                 <div class="col mt-5">
                     <h1>
+                        {{--  {{ auth()->user()->roles_id }}  --}}
                         <center><strong>Tatoos</strong></center>
                     </h1>
                     <div class="col text-end mb-2">
@@ -19,6 +20,7 @@
 
     <div {{-- id="galeria" --}} class="container-sm">
         <div id="row_1" >
+
             @foreach($posts as $post)
                 {{--  <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-2 col-xxl-2 mb-5 me-5">
                     <a href="{{ route('posts.show', $post) }}">

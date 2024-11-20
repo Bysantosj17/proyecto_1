@@ -16,21 +16,23 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{{ route('home') }}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{{ route('posts.index') }}">Tatoos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{{ route('about') }}">Acerca de</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{{ route('contact') }}">Contactame</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{{ route('citas.citas')}}">Citas</a>
-                </li>
+                {{--  @if(auth()->user()->roles_id == 2)  --}}
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ route('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ route('posts.index') }}">Tatoos</a>
+                    </li>
+                {{--  @endif  --}}
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ route('about') }}">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ route('contact') }}">Contactame</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ route('citas.citas')}}">Citas</a>
+                    </li>
 
 
                 @guest
@@ -38,7 +40,7 @@
                         <a class="nav-link text-light" href="{{ route('register') }}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ route('login') }}">inciar session</a>
+                        <a class="nav-link text-light" href="{{ route('login') }}">inciar sesión</a>
                     </li>
                 @endguest
 

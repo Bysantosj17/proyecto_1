@@ -31,6 +31,24 @@
                             @enderror
                         </label>
                         <br><br>
+
+                        <label>
+                            Tipo de usuario:
+                            <br><br>
+                            <select name="rol">
+                                <option>
+                                    -Seleccion-
+                                </option>
+                                <option value="1">
+                                    administrador
+                                </option>
+                                <option value="2">
+                                    cliente
+                                </option>
+                            </select>
+                        </label>
+
+                        <br><br>
                         <label>
                             <span>
                                 Contraseña: <br> <br>
