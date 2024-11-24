@@ -30,9 +30,16 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('contact') }}">Contactame</a>
                     </li>
+
+                @auth
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('citas.citas')}}">Citas</a>
                     </li>
+                @endauth
+
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('citas.citas')}}">Crear una cita</a>
+                </li>
 
 
                 @guest

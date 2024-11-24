@@ -31,7 +31,7 @@ Route::view('/contacto', 'contact')->name('contact');
 // Route::view('/cita', [CitaController::class, 'index_t'])->name('citas.index');
 
 Route::get('/cita', [CitaController::class, 'index_t'])->name('citas.citas');
-Route::get('/cita/crear_cita', [CitaController::class, 'crear_cita'])->name('cita.crear_cita');
+Route::get('/cita/crear_cita', [CitaController::class, 'crear_cita'])->name('cita.crear_cita')  ;
 Route::post('/cita', [CitaController::class, 'store'])->name('citas.store');
 
 Route::get('/cita/show/{cita}', [CitaController::class, 'show_t'])->name('cita.show_t');

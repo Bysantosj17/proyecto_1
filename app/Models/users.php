@@ -24,9 +24,14 @@ class users extends Model
         'password',
     ];
 
-    protected function Rol(): HasMany
+    // protected function Rol(): HasMany
+    // {
+    //     return $this->hasMany(rol::class);
+    // }
+
+    public function citas()
     {
-        return $this->hasMany(rol::class);
+        return $this->hasOne(Cita::class);
     }
 
 

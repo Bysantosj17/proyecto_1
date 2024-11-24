@@ -11,10 +11,15 @@ class Cita extends Model
 
     protected $table = 'citas';
 
-    protected $fillable = ['name', 'descripcion', 'email', 'tel', 'tatoos'];
+    protected $fillable = ['name', 'descripcion', 'tel', 'tatoos', 'users_id'];
 
     // public function users()
     // {
     //     return $this->hasMany(users::class, 'id_users');
     // }
+
+    public function users()
+    {
+        return $this->belongsTo(users::class, 'users_id', 'id');
+    }
 }

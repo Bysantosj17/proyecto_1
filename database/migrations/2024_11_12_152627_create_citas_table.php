@@ -18,13 +18,21 @@ return new class extends Migration
             // $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade);
             $table->string("name");
             $table->string("descripcion");
-            $table->string("email");
-            $table->integer("tel");
+            $table->string("tel");
             $table->string('tatoos');
             $table->dateTime('inicio');
             $table->dateTime('final');
             $table->time('hora_reserva');
             $table->string('color');
+
+            // $table->unsignedBigInteger('users_id');
+            // $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')
+            //     ->onUpdate('cascade');
+
+            $table->foreignId('users_id')
+                ->constrained()
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
             $table->timestamps();
         });

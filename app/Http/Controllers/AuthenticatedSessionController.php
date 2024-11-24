@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cita;
 use App\Models\users;
 use Dotenv\Exception\ValidationException;
 use Illuminate\Http\Request;
@@ -18,20 +19,20 @@ class AuthenticatedSessionController extends Controller
 
         $credentiales = $request->validate([
             'email' => ['required', 'string', 'email'],
-            'password' => ['required','string'],
+            'password' => ['required', 'string'],
         ]);
 
-        if ( ! Auth::attempt($credentiales, $request->boolean('remember')) ){
+        if (! Auth::attempt($credentiales, $request->boolean('remember'))) {
             //login success
             throw ValidationValidationException::withMessages([
                 'email' => __('auth.failed')
             ]);
         }
-            //login fail
-            $request->session()->regenerate();
+        //login fail
+        $request->session()->regenerate();
 
-            return redirect()->intended()
-                ->with('status', 'You are logged in');
+        return redirect()->intended()
+            ->with('status', 'You are logged in');
     }
 
     public function destroy(Request $request)
@@ -46,10 +47,12 @@ class AuthenticatedSessionController extends Controller
             ->with('status', 'You are logged out!');
     }
 
-    public function perfil(users $users){
+    public function perfil(users $users, Cita $citas)
+    {
 
-        return view('auth.perfil', ['users' => $users]);
+        $citas = Cita::find($users);
+
+
+        return view('auth.perfil', ['users' => $users], ['citas' => $citas]);
     }
-
-
 }

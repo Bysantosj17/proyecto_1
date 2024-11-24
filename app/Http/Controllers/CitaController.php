@@ -4,8 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRequest;
 use App\Models\Cita;
+use App\Models\users;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Gate;
+use Symfony\Component\HttpFoundation\RedirectResponse as HttpFoundationRedirectResponse;
+
+/**
+ * Create a new blog post.
+ *
+ * @throws \Illuminate\Auth\Access\AuthorizationException
+ */
 
 class CitaController extends Controller
 {
@@ -17,13 +27,12 @@ class CitaController extends Controller
         return view('citas.citas', ['citas' => $citas]);
     }
 
-    public function crear_cita()
+    public function crear_cita(Cita $cita)
     {
-
         return view('citas.crear_cita', ['cita' => new Cita]);
     }
 
-    public function store(StoreRequest $request)
+    public function store(StoreRequest $request, users $users)
     {
         $cita = new Cita();
 
@@ -42,14 +51,13 @@ class CitaController extends Controller
         $cita->hora_reserva = $request->input('hora_reserva');
         $cita->descripcion = $request->input('descripcion');
         $cita->tel = $request->input('tel');
-        $cita->email = $request->input('email');
         $cita->color = $request->input('color');
         $cita->inicio = $request->input('fecha_reserva');
         $cita->final = $request->input('fecha_reserva');
         $cita->tatoos = $url;
         $cita->save();
 
-        return to_route('citas.citas')->with('status', '¡Cita creada exitosamente!');
+        return to_route('citas.citas', ['users' => $users])->with('status', '¡Cita creada exitosamente!');
     }
 
     public function show_t(Cita $cita)
@@ -76,7 +84,6 @@ class CitaController extends Controller
         $cita->name = $request->input('name');
         $cita->descripcion = $request->input('descripcion');
         $cita->tel = $request->input('tel');
-        $cita->email = $request->input('email');
         $cita->color = $request->input('color');
         $cita->inicio = $request->input('fecha_reserva');
         $cita->final = $request->input('fecha_reserva');

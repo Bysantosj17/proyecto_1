@@ -1,6 +1,6 @@
 <label class="mt-5">
     <p class="text-start" >Nombres:</p>
-    <input class="mb-4 mb-sm-0" type="text" name="name" value="{{old('title', $cita->name)}}"> <br>
+    <input class="mb-4 mb-sm-0" type="text" name="name" value="{{ Auth::user()->name }}"> <br>
     @error('name')
         <small style="color: red">{{ $message }}</small>
     @enderror
@@ -15,7 +15,7 @@
 <br>
 <label class="mt-4">
     <p class="text-start">Numero de telefono:</p>
-    <input class="mb-4 mb-sm-0" type="tel" name="tel" value="{{ old('tel', $cita->tel) }}"> <br>
+    <input class="mb-4 mb-sm-0" type="tel" name="tel" value="{{ old('tel', $cita->tel) }}"><br>
     @error('tel')
         <small style="color: red">{{ $message }}</small>
     @enderror
