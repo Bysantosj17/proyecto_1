@@ -34,6 +34,11 @@ class users extends Model
         return $this->hasOne(Cita::class);
     }
 
+    public function Rol()
+    {
+        return $this->hasMany(Rol::class, 'roles_id', 'id');
+    }
+
 
     /**
      * The attributes that should be hidden for serialization.

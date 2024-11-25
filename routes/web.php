@@ -31,9 +31,8 @@ Route::view('/contacto', 'contact')->name('contact');
 // Route::view('/cita', [CitaController::class, 'index_t'])->name('citas.index');
 
 Route::get('/cita', [CitaController::class, 'index_t'])->name('citas.citas');
-Route::get('/cita/crear_cita', [CitaController::class, 'crear_cita'])->name('cita.crear_cita')  ;
+Route::get('/cita/crear_cita', [CitaController::class, 'crear_cita'])->name('cita.crear_cita');
 Route::post('/cita', [CitaController::class, 'store'])->name('citas.store');
-
 Route::get('/cita/show/{cita}', [CitaController::class, 'show_t'])->name('cita.show_t');
 Route::get('/cita/{cita}/edit_t', [CitaController::class, 'edit_t'])->name('cita.edit_t');
 Route::patch('/cita/{cita}', [CitaController::class, 'update_t'])->name('cita.update_t');
@@ -60,10 +59,10 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::view('/login', 'auth.login')->name('login');
-Route::post('login', [AuthenticatedSessionController::class, 'store']);
+Route::post('login', [AuthenticatedSessionController::class, 'store'])->name('auth.store');
 Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 Route::get('/perfil/{users}', [AuthenticatedSessionController::class, 'perfil'])->name('auth.perfil');
 
-Route::view('/register', 'auth.register')->name('register');
+Route::get('/register', [AuthenticatedSessionController::class, 'register_user'])->name('auht.register');
 Route::post('/register', [RegisteredUserController::class, 'store']);

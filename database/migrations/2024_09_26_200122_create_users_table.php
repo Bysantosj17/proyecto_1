@@ -19,6 +19,13 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->unsignedBigInteger('roles_id');
+            $table->foreign('roles_id')
+                ->references('id')
+                ->on('roles')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

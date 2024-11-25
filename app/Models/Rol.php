@@ -18,4 +18,9 @@ class Rol extends Model
     {
         return $this->hasOne(Cita::class);
     }
+
+    protected function users()
+    {
+        return $this->belongsTo(users::class, 'roles_id', 'id');
+    }
 }

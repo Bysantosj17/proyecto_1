@@ -44,7 +44,7 @@
 
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ route('register') }}">Register</a>
+                        <a class="nav-link text-light" href="{{ route('auht.register') }}">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('login') }}">inciar sesión</a>

@@ -55,4 +55,9 @@ class AuthenticatedSessionController extends Controller
 
         return view('auth.perfil', ['users' => $users], ['citas' => $citas]);
     }
+
+    public function register_user()
+    {
+        return view('auth.register');
+    }
 }
