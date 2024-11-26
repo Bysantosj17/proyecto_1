@@ -59,10 +59,10 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::view('/login', 'auth.login')->name('login');
-Route::post('login', [AuthenticatedSessionController::class, 'store'])->name('auth.store');
+Route::post('login', [AuthenticatedSessionController::class, 'store']);
 Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 Route::get('/perfil/{users}', [AuthenticatedSessionController::class, 'perfil'])->name('auth.perfil');
 
-Route::get('/register', [AuthenticatedSessionController::class, 'register_user'])->name('auht.register');
+Route::view('/register', 'auth.register')->name('register');
 Route::post('/register', [RegisteredUserController::class, 'store']);

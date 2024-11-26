@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Rol extends Model
@@ -19,8 +20,8 @@ class Rol extends Model
         return $this->hasOne(Cita::class);
     }
 
-    protected function users()
+    protected function users(): BelongsTo
     {
-        return $this->belongsTo(users::class, 'roles_id', 'id');
+        return $this->belongsTo(User::class, 'roles_id', 'id');
     }
 }

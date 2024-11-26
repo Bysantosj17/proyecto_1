@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRequest;
 use App\Models\Cita;
+use App\Models\User;
 use App\Models\users;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\RedirectResponse as HttpFoundationRedirectResponse;
@@ -32,7 +34,7 @@ class CitaController extends Controller
         return view('citas.crear_cita', ['cita' => new Cita]);
     }
 
-    public function store(StoreRequest $request, users $users)
+    public function store(StoreRequest $request, User $users)
     {
         $cita = new Cita();
 
@@ -52,6 +54,7 @@ class CitaController extends Controller
         $cita->descripcion = $request->input('descripcion');
         $cita->tel = $request->input('tel');
         $cita->color = $request->input('color');
+        $cita->users_id = $request->input('users_id');
         $cita->inicio = $request->input('fecha_reserva');
         $cita->final = $request->input('fecha_reserva');
         $cita->tatoos = $url;

@@ -6,7 +6,7 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-6">
-                <form action="{{ route('auth.store') }}" method="POST">
+                <form action="{{ route('register') }}" method="POST">
                     @csrf
                     <div>
                         <label>
@@ -35,7 +35,7 @@
                         <label>
                             Tipo de usuario:
                             <br><br>
-                            <select name="rol">
+                            <select name="roles_id">
                                 <option>
                                     -Seleccion-
                                 </option>

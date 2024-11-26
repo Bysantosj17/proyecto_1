@@ -61,3 +61,7 @@
         <small style="color: red">{{ $message }}</small>
     @enderror
 </label>
+
+<label>
+    <input type="hidden" name="users_id" value="{{  Auth::user()->id }}">
+</label>

@@ -14,19 +14,20 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:50', 'unique:user'],
-            'password'=> ['required', 'confirmed', Rules\Password::defaults()],
+            'email' => ['required', 'string', 'email', 'max:50', 'unique:users'],
+            'roles_id' => ['required'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $user = User::create([
+        User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'roles_id' => $request->roles_id,
             'password' => bcrypt($request->password),
         ]);
 
         // Auth::login($user);
 
-        return to_route('login')->with('status','La cuenta fue creada con exito');
-
+        return to_route('login')->with('status', 'La cuenta fue creada con exito');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cita;
+use App\Models\User;
 use App\Models\users;
 use Dotenv\Exception\ValidationException;
 use Illuminate\Http\Request;
@@ -47,17 +48,13 @@ class AuthenticatedSessionController extends Controller
             ->with('status', 'You are logged out!');
     }
 
-    public function perfil(users $users, Cita $citas)
+    public function perfil(User $users, Cita $citas)
     {
 
-        $citas = Cita::find($users);
+        $citas = Cita::all();
+        $users = User::all();
 
 
         return view('auth.perfil', ['users' => $users], ['citas' => $citas]);
-    }
-
-    public function register_user()
-    {
-        return view('auth.register');
     }
 }

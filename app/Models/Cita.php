@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Cita extends Model
 {
@@ -18,8 +19,8 @@ class Cita extends Model
     //     return $this->hasMany(users::class, 'id_users');
     // }
 
-    public function users()
+    public function users(): HasOne
     {
-        return $this->belongsTo(users::class, 'users_id', 'id');
+        return $this->hasOne(User::class, 'users_id', 'id');
     }
 }
