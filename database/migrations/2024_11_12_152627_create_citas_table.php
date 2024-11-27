@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("name");
             $table->string("descripcion");
             $table->string("tel");
+            $table->string('email');
             $table->string('tatoos');
             $table->dateTime('inicio');
             $table->dateTime('final');
@@ -29,9 +30,9 @@ return new class extends Migration
             // $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')
             //     ->onUpdate('cascade');
 
-            
 
-            $table->foreignId('users_id')
+
+            $table->foreignId('user_id')
                 ->constrained()
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

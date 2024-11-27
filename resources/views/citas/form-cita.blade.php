@@ -23,7 +23,7 @@
 
 <label class="ms-sm-5">
     <p class="text-start">Correo electronico:</p>
-    <input class="mb-sm-0" type="email" name="email" value="{{ old('email', $cita->email) }}"> <br>
+    <input class="mb-sm-0" type="email" name="email" value="{{ Auth::user()->email }}"> <br>
 
     @error('email')
         <small style="color: red">{{ $message }}</small>

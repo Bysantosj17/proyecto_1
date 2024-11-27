@@ -50,11 +50,9 @@ class AuthenticatedSessionController extends Controller
 
     public function perfil(User $users, Cita $citas)
     {
+        $users = Auth::user();
+        $citas = $users->citas;
 
-        $citas = Cita::all();
-        $users = User::all();
-
-
-        return view('auth.perfil', ['users' => $users], ['citas' => $citas]);
+        return view('auth.perfil', compact('users', 'citas'));
     }
 }
