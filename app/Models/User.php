@@ -40,9 +40,9 @@ class User extends  Authenticatable
         return $this->hasMany(Cita::class, 'users_id', 'id');
     }
 
-    public function Rol(): HasOne
+    public function Rol(): BelongsTo
     {
-        return $this->hasone(Rol::class, 'id', 'roles_id');
+        return $this->belongsTo(Rol::class, 'roles_id', 'id');
     }
 
 

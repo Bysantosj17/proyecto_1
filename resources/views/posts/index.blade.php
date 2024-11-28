@@ -10,7 +10,9 @@
                     </h1>
                     <div class="col text-end mb-2">
                         @auth
-                            <a class="btn btn-info text-light" href="{{ route('posts.create') }}">Crear nuevo post</a>
+                            @if((Auth::user()->roles_id == 1))
+                                <a class="btn btn-info text-light" href="{{ route('posts.create') }}">Crear nuevo post</a>
+                            @endif
                         @endauth
                     </div>
                 </div>

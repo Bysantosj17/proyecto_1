@@ -32,14 +32,15 @@
                     </li>
 
                 @auth
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ route('citas.citas')}}">Citas</a>
-                    </li>
+                    @if(Auth::user()->roles_id == 1 )
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="{{ route('citas.citas')}}">Citas</a>
+                        </li>
+                    @endif
                 @endauth
-
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{{ route('citas.citas')}}">Crear una cita</a>
-                </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="{{ route('cita.crear_cita')}}">Crear una cita</a>
+                        </li>
 
 
                 @guest
@@ -55,7 +56,7 @@
                 @auth
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('auth.perfil', Auth::user()->id)}}">
-                            {{ Auth::user()->name }}
+                            <i class="bi bi-person-circle"></i> {{ Auth::user()->name }}
                         </a>
                     </li>
                     <form action="{{ route('logout') }}" method="POST">

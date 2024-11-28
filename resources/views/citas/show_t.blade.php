@@ -16,7 +16,12 @@
             </div>
 
             <div class="col">
-                <a class="btn btn-outline-primary mt-5 me-5" href="{{ route('citas.citas') }}">Regresar a citas</a>
+                @auth
+                    @if((Auth::user()->roles_id == 1))
+                        <a class="btn btn-outline-primary mt-5 me-5" href="{{ route('citas.citas') }}">Regresar a citas</a>
+                    @endif
+                @endauth
+
                 <a class="btn btn-outline-success mt-5" href="{{ route('cita.edit_t', $cita) }}">Editar</a>
             </div>
             </div>
