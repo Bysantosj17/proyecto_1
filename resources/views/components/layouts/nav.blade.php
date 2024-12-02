@@ -41,7 +41,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" href="{{ route('cita.crear_cita')}}">Crear una cita</a>
                         </li>
-
+                @auth
+                    @if(Auth::user()->roles_id == 1 )
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="{{ route('register')}}">registrar un nuevo usuario</a>
+                        </li>
+                    @endif
+                @endauth
 
                 @guest
                     <li class="nav-item">
@@ -56,7 +62,7 @@
                 @auth
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('auth.perfil', Auth::user()->id)}}">
-                            <i class="bi bi-person-circle"></i> {{ Auth::user()->name }}
+                            <i class="bi bi-person-circle"></i>{{Auth::user()->rol->rol}} : {{ Auth::user()->name }}
                         </a>
                     </li>
                     <form action="{{ route('logout') }}" method="POST">

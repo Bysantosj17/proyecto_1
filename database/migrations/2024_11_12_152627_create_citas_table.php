@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string("tel");
             $table->string('email');
             $table->string('tatoos');
-            $table->dateTime('inicio');
-            $table->dateTime('final');
+            $table->date('inicio');
+            $table->date('final');
             $table->time('hora_reserva');
             $table->string('color');
 

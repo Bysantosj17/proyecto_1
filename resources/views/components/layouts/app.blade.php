@@ -28,8 +28,7 @@
 
     {{ $slot }}
 
-<x-layouts.footer />
-
+<x-layouts.footer/>
 </body>
 
 </html>

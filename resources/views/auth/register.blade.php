@@ -1,11 +1,9 @@
 <x-layouts.app title="Register" meta-description="Contact meta description">
-    <center>
-        <h1 class="text-primary text-center mt-5">Registrar</h1>
-    </center>
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-6">
+            <h1 class="text-primary text-center mt-2 mb-5">Registrar</h1>
+            <div class="col-4">
                 <form action="{{ route('register') }}" method="POST">
                     @csrf
                     <div>
@@ -19,7 +17,6 @@
                                 <small style="color: red">{{ $message }}</small>
                             @enderror
                         </label>
-                        <br><br>
                         <label>
                             <span>
                                 Email: <br> <br>
@@ -30,25 +27,9 @@
                                 <small style="color: red">{{ $message }}</small>
                             @enderror
                         </label>
-                        <br><br>
-
-                        <label>
-                            Tipo de usuario:
-                            <br><br>
-                            <select name="roles_id">
-                                <option>
-                                    -Seleccion-
-                                </option>
-                                <option value="1">
-                                    administrador
-                                </option>
-                                <option value="2">
-                                    cliente
-                                </option>
-                            </select>
-                        </label>
 
                         <br><br>
+
                         <label>
                             <span>
                                 Contraseña: <br> <br>
@@ -59,7 +40,6 @@
                                 <small style="color: red">{{ $message }}</small>
                             @enderror
                         </label>
-                        <br><br>
                         <label>
                             <span>
                                 Confirmar contraseña: <br> <br>
@@ -73,6 +53,28 @@
                     </div>
 
                     <br>
+
+                    @auth
+                        @if (Auth::user()->roles_id == 1)
+                            <label>
+                                Tipo de usuario:
+                                <br><br>
+                                <select name="roles_id">
+                                    <option>
+                                        -Seleccion-
+                                    </option>
+                                    <option value="1">
+                                        administrador
+                                    </option>
+                                    <option value="2">
+                                        cliente
+                                    </option>
+                                </select>
+                            </label>
+                        @endif
+                    @endauth
+
+                    <br> <br>
 
                     <button class="btn btn-success" type="submit">Register</button>&nbsp;&nbsp;&nbsp;
 

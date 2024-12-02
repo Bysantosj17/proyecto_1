@@ -34,7 +34,7 @@
 
 <label class="mt-4">
     <p>Fecha</p>
-    <input type="date" class="form-control" name="fecha_reserva">
+    <input type="date" class="form-control" id="fecha_reserva" name="fecha_reserva">
 </label>
 
 <label class="ms-sm-5">
@@ -63,5 +63,5 @@
 </label>
 
 <label>
-    <input type="hidden" name="users_id" value="{{  Auth::user()->id }}">
+    <input type="hidden" name="user_id" value="{{  Auth::user()->id }}">
 </label>
