@@ -10,13 +10,13 @@
                 @csrf
                 <div class="row justify-content-center">
                     @include('citas.form-cita')
+
+                    <div class="col-12 col-sm-8 text-start text-sm-center">
+                        <button class="btn btn-primary mt-2 me-5 me-sm-2" type="submit"> Registrar cita</button>
+                        <a class="btn btn-outline-primary mt-2 ms-5"  href="{{ route('citas.citas') }}">Regresar a citas</a>
+                    </div>
                 </div>
 
-
-                <br>
-
-                    <button class="btn btn-primary mt-5" type="submit"> Registrar cita</button> <br>
-                    <a class="btn btn-outline-primary mt-5"  href="{{ route('citas.citas') }}">Regresar a citas</a>
                 </div>
             </form>
         </div>

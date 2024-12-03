@@ -6,13 +6,12 @@
             <div class="col-4">
                 <form action="{{ route('register') }}" method="POST">
                     @csrf
-                    <div>
+                    <div class="col-12">
                         <label>
                             <span>
                                 Nombre del usuario: <br> <br>
                             </span>
                             <input name="name" type="text" value="{{ old('name') }}" autofocus="autofocus">
-                            <br>
                             @error('name')
                                 <small style="color: red">{{ $message }}</small>
                             @enderror
@@ -22,37 +21,33 @@
                                 Email: <br> <br>
                             </span>
                             <input name="email" type="email" value="{{ old('email') }}">
-                            <br>
                             @error('email')
-                                <small style="color: red">{{ $message }}</small>
-                            @enderror
-                        </label>
-
-                        <br><br>
-
-                        <label>
-                            <span>
-                                Contraseña: <br> <br>
-                            </span>
-                            <input name="password" type="password" value="{{ old('password') }}">
-                            <br>
-                            @error('password')
-                                <small style="color: red">{{ $message }}</small>
-                            @enderror
-                        </label>
-                        <label>
-                            <span>
-                                Confirmar contraseña: <br> <br>
-                            </span>
-                            <input name="password_confirmation" type="password" value="{{ old('password_confirmation') }}">
-                            <br>
-                            @error('password_confirmation')
                                 <small style="color: red">{{ $message }}</small>
                             @enderror
                         </label>
                     </div>
 
-                    <br>
+                    <label>
+                        <span>
+                            Contraseña: <br> <br>
+                        </span>
+                        <input name="password" type="password" value="{{ old('password') }}">
+                        <br>
+                        @error('password')
+                            <small style="color: red">{{ $message }}</small>
+                        @enderror
+                    </label>
+
+                    <label>
+                        <span>
+                            Confirmar contraseña: <br> <br>
+                        </span>
+                        <input name="password_confirmation" type="password" value="{{ old('password_confirmation') }}">
+                        <br>
+                        @error('password_confirmation')
+                            <small style="color: red">{{ $message }}</small>
+                        @enderror
+                    </label>
 
                     @auth
                         @if (Auth::user()->roles_id == 1)
