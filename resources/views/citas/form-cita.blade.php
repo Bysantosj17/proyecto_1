@@ -33,37 +33,35 @@
     </label>
 </div>
 
-<div class="col-sm-12 ms-sm-2 text-sm-start mb-2">
-    <label class="mt-4">
-        <p class="text-start">Fecha</p>
-        <input type="date" class="form-control" id="fecha_reserva" value="<?php echo date('Y-m-d');?>" name="fecha_reserva">
+<div class="col-sm-12 ms-sm-2 text-sm-center mb-2">
+    <label class="me-sm-5 me-3">
+        <p class="text-start mt-2">Fecha</p>
+        <input type="date" class="form-control mt-4" id="fecha_reserva" value="<?php echo date('Y-m-d');?>" name="fecha_reserva">
     </label>
 
-    <label class="ms-sm-5">
-        <p class="text-start">Hora</p>
+    <label class="me-sm-4 me-3">
+        <p class="text-start mt-2">Hora</p>
         <input type="time" class="form-control" name="hora_reserva" id="hora_reservada">
+    </label>
+
+    <label class="ms-sm-1 me-sm-2">
+        <p class="mt-2">Color:</p>
+        <input type="color" name="color" class="form-control">
     </label>
 </div>
 
-<br>
+<div class="col-12 text-sm-center">
+    <label class="mt-4 me-5 pe-3">
+        <p class="text-start">Tatuaje:</p>
+        <input class="form-control mb-4" type="file" accept="image/*" name="tatoos" value="{{ old('tatoos', $cita->tatoos) }}">
 
-<label class="mt-4">
-    <p>Color:</p>
-    <input type="color" name="color" class="form-control">
-</label>
+        <img class="img-fluid" src="{{ asset($cita->tatoos) }}" alt="">
 
-<br>
-
-<label class="mt-4">
-    <p class="text-start">Tatuaje:</p>
-    <input class="form-control mb-4" type="file" accept="image/*" name="tatoos" value="{{ old('tatoos', $cita->tatoos) }}">
-
-    <img class="img-fluid" src="{{ asset($cita->tatoos) }}" alt="">
-
-    @error('tatoos')
-        <small style="color: red">{{ $message }}</small>
-    @enderror
-</label>
+        @error('tatoos')
+            <small style="color: red">{{ $message }}</small>
+        @enderror
+    </label>
+</div>
 
 <label>
     <input type="hidden" name="user_id" value="{{  Auth::user()->id }}">
