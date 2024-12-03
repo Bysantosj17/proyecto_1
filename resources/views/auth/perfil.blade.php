@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col text-center mt-5 mb-5">
                 <h1>Perfil de {{ $users->name }}</h1>
-                <p>Correo electromico {{ $users->email }}</p>
+                <p>Correo electronico {{ $users->email }}</p>
                 @if($citas->isEmpty())
                     <p>No tienes citas agendadas.</p>
                 @else
@@ -14,7 +14,7 @@
                                     Fecha: {{ $cita->inicio }} <br>
 
                                     Descripcion: <br>
-                                    
+
                                     <img class="text-center" src="{{asset( $cita->tatoos) }}" width="100px">
                                 </div>
                         @endforeach

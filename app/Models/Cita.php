@@ -13,7 +13,7 @@ class Cita extends Model
 
     protected $table = 'citas';
 
-    protected $fillable = ['name', 'email', 'descripcion', 'tel', 'tatoos', 'user_id'];
+    protected $fillable = ['name', 'email', 'descripcion', 'tel', 'tatoos', 'users_id'];
 
     // public function users()
     // {
@@ -22,6 +22,6 @@ class Cita extends Model
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(User::class, 'users_id', 'id');
     }
 }

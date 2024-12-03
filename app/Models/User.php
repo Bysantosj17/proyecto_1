@@ -37,7 +37,7 @@ class User extends  Authenticatable
 
     public function citas(): HasMany
     {
-        return $this->hasMany(Cita::class, 'user_id', 'id');
+        return $this->hasMany(Cita::class, 'users_id', 'id');
     }
 
     public function rol(): BelongsTo

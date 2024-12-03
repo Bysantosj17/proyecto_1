@@ -33,26 +33,23 @@
     </label>
 </div>
 
-<div class="col-sm-12 ms-sm-2 text-sm-start mb-2">
-    <label class="mt-4">
+<div class="col-sm-12 ms-sm-2 text-sm-center mb-2">
+    <label class="mt-4 ">
         <p class="text-start">Fecha</p>
         <input type="date" class="form-control" id="fecha_reserva" value="<?php echo date('Y-m-d');?>" name="fecha_reserva">
     </label>
 
-    <label class="ms-sm-5">
+    <label class="me-4 ms-sm-5">
         <p class="text-start">Hora</p>
         <input type="time" class="form-control" name="hora_reserva" id="hora_reservada">
     </label>
+
+    <label class="mt-4 ms-2">
+        <p>Color:</p>
+        <input type="color" name="color" class="form-control">
+    </label>
 </div>
 
-<br>
-
-<label class="mt-4">
-    <p>Color:</p>
-    <input type="color" name="color" class="form-control">
-</label>
-
-<br>
 
 <label class="mt-4">
     <p class="text-start">Tatuaje:</p>
