@@ -38,11 +38,12 @@
                         </li>
                     @endif
                 @endauth
+                @auth
+                    @if(Auth::user()->roles_id == 1 )
                         <li class="nav-item">
                             <a class="nav-link text-light" href="{{ route('cita.crear_cita')}}">Crear una cita</a>
                         </li>
-                @auth
-                    @if(Auth::user()->roles_id == 1 )
+
                         <li class="nav-item">
                             <a class="nav-link text-light" href="{{ route('register')}}">registrar un nuevo usuario</a>
                         </li>
