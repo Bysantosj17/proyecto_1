@@ -55,7 +55,7 @@ class CitaController extends Controller
         $cita->email = $request->input('email');
         $cita->tel = $request->input('tel');
         $cita->color = $request->input('color');
-        $cita->user_id = $request->input('user_id');
+        $cita->users_id = $request->input('users_id');
         $cita->inicio = $request->input('fecha_reserva');
         $cita->final = $request->input('fecha_reserva');
         $cita->tatoos = $url;
@@ -91,7 +91,7 @@ class CitaController extends Controller
         $cita->email = $request->input('email');
         $cita->color = $request->input('color');
         $cita->inicio = $request->input('fecha_reserva');
-        $cita->user_id = $request->input('user_id');
+        $cita->users_id = $request->input('users_id');
         $cita->final = $request->input('fecha_reserva');
         $cita->tatoos = $url;
         $cita->update();

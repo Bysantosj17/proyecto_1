@@ -32,7 +32,7 @@ return new class extends Migration
 
 
 
-            $table->foreignId('user_id')
+            $table->foreignId('users_id')
                 ->constrained()
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

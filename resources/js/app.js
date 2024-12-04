@@ -1,6 +1,5 @@
-
-
 import 'bootstrap';
+import Swal from 'sweetalert2';
 
 document.addEventListener('DOMContentLoaded', function(){
     const fechaReservaInput = document.getElementById('fecha_reserva');
@@ -37,3 +36,13 @@ document.addEventListener('DOMContentLoaded',function(){
         }
     });
 });
+
+Swal.fire({
+    title: 'Bienvenido',
+    text: 'Hola que hace',
+    icon: 'success',
+    confirmButtonText: 'Selecciona perro',
+    footer: 'Es importante',
+});
+
+

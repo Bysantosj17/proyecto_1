@@ -16,7 +16,7 @@
                 <br>
 
                 <div class="col-9 justify-content-start">
-                    <button class="btn btn-primary mt-5" type="submit">Actualizar cita</button> <br>
+                    <button class="btn btn-primary mt-5" type="submit" id="btn_guardar">Actualizar cita</button> <br>
                     <a class="btn btn-outline-primary mt-5"  href="{{ route('citas.citas') }}">Regresar a citas</a>
                 </div>
             </form>

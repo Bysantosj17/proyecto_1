@@ -1,6 +1,10 @@
 <x-layouts.app title="Register" meta-description="Contact meta description">
 
     <div class="container mt-5">
+        <button class="btn btn-primary" id="btn">
+            guardar
+        </button>
+
         <div class="row justify-content-center">
             <h1 class="text-primary text-center mt-2 mb-5">Registrar</h1>
             <div class="col-4">
@@ -49,8 +53,7 @@
                         @enderror
                     </label>
 
-                    @auth
-                        @if (Auth::user()->roles_id == 1)
+
                             <label>
                                 Tipo de usuario:
                                 <br><br>
@@ -66,12 +69,11 @@
                                     </option>
                                 </select>
                             </label>
-                        @endif
-                    @endauth
+
 
                     <br> <br>
 
-                    <button class="btn btn-success" type="submit">Register</button>&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-success" type="submit" id="btn_guardar" >Register</button>&nbsp;&nbsp;&nbsp;
 
                     <a class="btn btn-outline-primary" href="{{ route('login') }}">login</a>
 
