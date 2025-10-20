@@ -13,7 +13,7 @@
 
                 @include('citas.form-cita')
 
-                <br>
+                <br> hola
 
                 <div class="col-9 justify-content-start">
                     <button class="btn btn-primary mt-5" type="submit" id="btn_guardar">Actualizar cita</button> <br>

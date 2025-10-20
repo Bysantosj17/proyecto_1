@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded',function(){
     });
 });
 
-Swal.fire({
-    title: 'Bienvenido',
-    text: 'Hola que hace',
-    icon: 'success',
-    confirmButtonText: 'Selecciona perro',
-    footer: 'Es importante',
-});
+// Swal.fire({
+//     title: 'Bienvenido',
+//     text: 'Hola que hace',
+//     icon: 'success',
+//     confirmButtonText: 'Selecciona perro',
+//     footer: 'Es importante',
+// });
 
 
